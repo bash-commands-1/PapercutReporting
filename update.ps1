@@ -1,7 +1,7 @@
 Start-Sleep -Seconds 3
 
 #Download updated script
-$dl = (New-Object System.Net.WebClient).Downloadstring('https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/PapercutNotification.ps1')
+$dl = (New-Object System.Net.WebClient).Downloadstring('https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/PapercutNotifications.ps1')
 
 if ($dl -eq $null)
 {
