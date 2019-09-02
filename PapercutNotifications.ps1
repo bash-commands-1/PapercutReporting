@@ -2,7 +2,7 @@
 
 [string]$version = 2.4
 
-[xml]$xmldoc = Get-Content "$($PWD.Path)\config.xml"
+[xml]$xmldoc = Get-Content "C:\CT\Papercut\config.xml"
 
 $Company = $config.company.name
 $PapercutAuthURL = $xmldoc.config.company.PapercutApiURL
