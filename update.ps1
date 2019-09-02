@@ -14,6 +14,7 @@ try
 {
     Remove-Item "$($PWD.Path)\PapercutNotification.ps1"
     $dl | Out-File "$($PWD.Path)\PapercutNotification.ps1"
+    Start-Process PowerShell -Arg "$($PWD.Path)\PapercutNotification.ps1" -notify
 }
 catch [System.Exception] {
     #Failed to update exitting
