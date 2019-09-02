@@ -2,14 +2,14 @@
 
 $version = 2.4
 
-$config = Get-Content "$($PWD.Path)\config.xml"
+[xml]$xmldoc = Get-Content "$($PWD.Path)\config.xml"
 
 $Company = $config.company.name
-$PapercutAuthURL = $config.company.PapercutApiURL
-$NotificationChannelID = $config.ct.notificationid
-$CheckinChannelID = $config.ct.checkinid
-$ReportUserLicense = $config.vars.reportuserlicense
-$ReportSupportLicense = $config.vars.reportsupportlicense
+$PapercutAuthURL = $xmldoc.config.company.PapercutApiURL
+$NotificationChannelID = $xmldoc.config.ct.notificationid
+$CheckinChannelID = $xmldoc.config.ct.checkinid
+$ReportUserLicense = $xmldoc.config.vars.reportuserlicense
+$ReportSupportLicense = $xmldoc.config.vars.reportsupportlicense
 
 $githubver = "https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/versioncheck.txt"
 $updatefile = "https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/update.ps1"
@@ -44,11 +44,11 @@ function UpdateCheck()
 			if ([int]$next[$i] -gt [int]$curr[$i])
 			{
 				$updateavailable = $true
+				UpdateScript
 				break
 			}
 		}
 	}
-	UpdateScript
 }
 
 function UpdateScript()
@@ -102,7 +102,7 @@ Catch
 }
 
 #Check in to teams (once a month)
-if( ($day -le 7) -Or ($notify -ne $false) )
+if( (($day -le 7) -And ((get-date).DayOfWeek -eq "Monday"))-Or ($notify -ne $false) )
 {
     write-host test
     $Fact1 = New-TeamsFact -Name 'Script Version' -Value "**$version**"
