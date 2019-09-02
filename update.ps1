@@ -1,3 +1,5 @@
+Start-Sleep -Seconds 3
+
 #Download updated script
 $dl = (New-Object System.Net.WebClient).Downloadstring('https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/PapercutNotification.ps1?token=ANCDFFKEPFMBVLFICGAYXFS5NT3FS')
 
