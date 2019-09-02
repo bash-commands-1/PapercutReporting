@@ -1,6 +1,6 @@
 ﻿param([switch]$notify)
 
-$version = 2.4
+[string]$version = 2.4
 
 [xml]$xmldoc = Get-Content "$($PWD.Path)\config.xml"
 
