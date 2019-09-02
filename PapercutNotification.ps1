@@ -104,6 +104,7 @@ Catch
 #Check in to teams (once a month)
 if( ($day -le 7) -Or ($notify -eq $true) )
 {
+    write-host test
     $Fact1 = New-TeamsFact -Name 'Script Version' -Value "**$version**"
 		$Fact2 = New-TeamsFact -Name 'Papercut Version' -Value "**$papercutversion**"
 		$CurrentDate = Get-Date
