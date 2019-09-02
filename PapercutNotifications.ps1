@@ -18,7 +18,6 @@ $day = (Get-WmiObject Win32_LocalTime).day
 $reportingserver = $env:computername
 
 
-echo $notify
 #Update from github
 
 function UpdateCheck()
@@ -104,10 +103,9 @@ Catch
 #Check in to teams (once a month)
 if( (($day -le 7) -And ((get-date).DayOfWeek -eq "Monday"))-Or ($notify -ne $false) )
 {
-    write-host test
     $Fact1 = New-TeamsFact -Name 'Script Version' -Value "**$version**"
-		$Fact2 = New-TeamsFact -Name 'Papercut Version' -Value "**$papercutversion**"
-		$CurrentDate = Get-Date
+    $Fact2 = New-TeamsFact -Name 'Papercut Version' -Value "**$papercutversion**"
+    $CurrentDate = Get-Date
     $Section = New-TeamsSection `
         -ActivityTitle "Check-In" `
         -ActivitySubtitle "$CurrentDate" `
