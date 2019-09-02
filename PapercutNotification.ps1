@@ -11,8 +11,8 @@ $CheckinChannelID = $config.ct.checkinid
 $ReportUserLicense = $config.vars.reportuserlicense
 $ReportSupportLicense = $config.vars.reportsupportlicense
 
-$githubver = "https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/versioncheck.txt?token=ANCDFFKSC33O4YNMS5HIJPK5NT2DM"
-$updatefile = "https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/update.ps1?token=ANCDFFPX6PEJYNCMDEDRRM25NT2H4"
+$githubver = "https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/versioncheck.txt"
+$updatefile = "https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/update.ps1"
 
 $day = (Get-WmiObject Win32_LocalTime).day
 $reportingserver = $env:computername
