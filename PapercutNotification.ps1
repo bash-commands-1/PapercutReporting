@@ -1,4 +1,4 @@
-﻿param([bool]$notify = $true)
+﻿param([switch]$notify)
 
 $version = 2.4
 
@@ -102,7 +102,7 @@ Catch
 }
 
 #Check in to teams (once a month)
-if( ($day -le 7) -Or ($notify -eq $true) )
+if( ($day -le 7) -Or ($notify -ne $false) )
 {
     write-host test
     $Fact1 = New-TeamsFact -Name 'Script Version' -Value "**$version**"
