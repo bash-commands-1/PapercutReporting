@@ -1,7 +1,7 @@
 Start-Sleep -Seconds 3
 
 #Download updated script
-$dl = (New-Object System.Net.WebClient).Downloadstring('https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/PapercutNotification.ps1?token=ANCDFFKEPFMBVLFICGAYXFS5NT3FS')
+$dl = (New-Object System.Net.WebClient).Downloadstring('https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/PapercutNotification.ps1')
 
 if ($dl -eq $null)
 {
@@ -17,6 +17,6 @@ try
     Start-Process PowerShell -Arg "$($PWD.Path)\PapercutNotification.ps1" -notify
 }
 catch [System.Exception] {
-    #Failed to update exitting
+    #Failed to update exiting
     exit
 }
