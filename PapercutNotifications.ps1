@@ -101,7 +101,7 @@ Catch
 }
 
 #Check in to teams (once a month)
-if( (($day -le 7) -And ((get-date).DayOfWeek -eq "Monday"))-Or ($notify -ne $false) )
+if( (($day -le 7) -And ((get-date).DayOfWeek -eq "Monday")) -Or ($notify -ne $false) )
 {
     $Fact1 = New-TeamsFact -Name 'Script Version' -Value "**$version**"
     $Fact2 = New-TeamsFact -Name 'Papercut Version' -Value "**$papercutversion**"
