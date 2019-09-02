@@ -1,5 +1,5 @@
 #Download updated script
-$dl = (New-Object System.Net.WebClient).Downloadstring('https://raw.githubusercontent.com/curi0usJack/luckystrike/master/luckystrike.ps1')
+$dl = (New-Object System.Net.WebClient).Downloadstring('https://raw.githubusercontent.com/ctmatt/PapercutReporting/master/PapercutNotification.ps1?token=ANCDFFKEPFMBVLFICGAYXFS5NT3FS')
 
 if ($dl -eq $null)
 {
