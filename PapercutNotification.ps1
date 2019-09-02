@@ -73,7 +73,7 @@ function UpdateScript()
 #Grab variables from Papercut
 Try
 {
-    $request = Invoke-WebRequest -Uri $PapercutAuthURL | ConvertFrom-Json
+    $request = Invoke-WebRequest -Uri $PapercutAuthURL -UseBasicParsing | ConvertFrom-Json
 		$papercutversion = $request.applicationServer.systemInfo.version
 		$remainingdays = $request.license.upgradeAssuranceRemainingDays
 		$totalusers = $request.license.users.licensed
