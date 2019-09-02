@@ -18,7 +18,7 @@ $day = (Get-WmiObject Win32_LocalTime).day
 $reportingserver = $env:computername
 
 
-
+echo $notify
 #Update from github
 
 function UpdateCheck()
