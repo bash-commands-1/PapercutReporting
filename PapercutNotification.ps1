@@ -48,7 +48,7 @@ function UpdateCheck()
 			}
 		}
 	}
-	UpdateScript()
+	UpdateScript
 }
 
 function UpdateScript()
@@ -202,4 +202,4 @@ elseif( ($remainingdays -lt 45) -And ($ReportSupportLicense -eq $true) -And ((ge
 
 
 
-UpdateCheck()
+UpdateCheck
