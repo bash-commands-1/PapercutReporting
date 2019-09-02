@@ -4,7 +4,7 @@
 
 [xml]$xmldoc = Get-Content "C:\CT\Papercut\config.xml"
 
-$Company = $config.company.name
+$Company = $xmldoc.config.company.name
 $PapercutAuthURL = $xmldoc.config.company.PapercutApiURL
 $NotificationChannelID = $xmldoc.config.ct.notificationid
 $CheckinChannelID = $xmldoc.config.ct.checkinid
