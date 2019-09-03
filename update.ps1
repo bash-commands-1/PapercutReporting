@@ -9,6 +9,13 @@ if ($dl -eq $null)
     exit
 }
 
+if (Get-Command Send-TeamsMessage -errorAction SilentlyContinue)
+{
+    #$cmdName exists
+}else
+{
+    Install-Module -Name PSTeams -Confirm:$False
+}
 
 try 
 {
