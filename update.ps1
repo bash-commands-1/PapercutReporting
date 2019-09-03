@@ -12,7 +12,10 @@ if ($dl -eq $null)
 
 try 
 {
-    Remove-Item "$($PWD.Path)\PapercutNotifications.ps1"
+    if(Test-Path -Path "$($PWD.Path)\PapercutNotifications.ps1")
+    {
+        Remove-Item "$($PWD.Path)\PapercutNotifications.ps1"
+    }
     $dl | Out-File "$($PWD.Path)\PapercutNotifications.ps1"
     Invoke-Expression "$($PWD.Path)\PapercutNotifications.ps1 -notify"
 }
