@@ -9,14 +9,23 @@ if ($dl -eq $null)
     exit
 }
 
-if (Get-Command Send-TeamsMessage -errorAction SilentlyContinue)
+$psversion = Get-Host | Select-Object Version
+$psversion = $psversion.Version.major
+if($psversion -gt 4)
 {
-    #$cmdName exists
-}else
+	if (Get-Command Send-TeamsMessage -errorAction SilentlyContinue)
+	{
+	    #$cmdName exists
+	}else
+	{
+	    Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
+	    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -force
+	    Install-Module -Name PSTeams -Confirm:$False
+	}
+}
+else
 {
-    Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
-    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -force
-    Install-Module -Name PSTeams -Confirm:$False
+ Write-Host = "Update powershell please"
 }
 
 try 
