@@ -14,6 +14,8 @@ if (Get-Command Send-TeamsMessage -errorAction SilentlyContinue)
     #$cmdName exists
 }else
 {
+    Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
+    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -force
     Install-Module -Name PSTeams -Confirm:$False
 }
 
