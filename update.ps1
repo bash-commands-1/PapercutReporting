@@ -25,7 +25,7 @@ if($psversion -gt 4)
 }
 else
 {
- Write-Host = "Update powershell please"
+ Write-Host "Update powershell please"
 }
 
 try 
