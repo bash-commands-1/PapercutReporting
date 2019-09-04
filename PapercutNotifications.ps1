@@ -61,8 +61,6 @@ function UpdateScript()
 			}
 			
 				(New-Object System.Net.Webclient).DownloadFile($updatefile, $updatepath)
-				Start-Process PowerShell -Arg $updatepath
-				exit
 			}
 }
 
