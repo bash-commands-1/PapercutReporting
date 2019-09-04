@@ -35,7 +35,6 @@ try
         Remove-Item "$($PWD.Path)\PapercutNotifications.ps1"
     }
     $dl | Out-File "$($PWD.Path)\PapercutNotifications.ps1"
-    Invoke-Expression "$($PWD.Path)\PapercutNotifications.ps1 -notify"
 }
 catch [System.Exception] {
     #Failed to update exiting
